@@ -188,11 +188,3 @@ final_names = np.array(['one1', 'one2', 'one3', 'four1', 'four2', 'four3', 'seve
 for i in range(len(final_names)):
     eval(final_names[i]).savefig(final_names[i] + '.png')
     
-
-
-
-# In[ ]:
-
-
-
-
