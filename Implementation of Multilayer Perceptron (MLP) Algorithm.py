@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 # EE550 - Project 3
 # Question 1 (XOR Problem)
 # 1.i) Generating XOR dataset
@@ -73,9 +70,6 @@ def back_propagation(o1, o2, s1, s2, y_hat, y, n, W1, W2, b1, b2):
     W2 = W2 - delta_W2
     b2 = b2 - delta_b2
     return (W1, W2, b1, b2, L)
-
-
-# In[3]:
 
 
 # The Network Architecture with 10000 epoches and learning rate 0.09
