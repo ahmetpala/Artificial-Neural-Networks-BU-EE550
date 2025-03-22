@@ -244,9 +244,6 @@ plt.show()
 print("Number of epoches =", len(Loss_2))
 
 
-# In[10]:
-
-
 # Plotting the train dataset consisting of 60 data points
 predictions = forward_propagation_2(x_train.T, W1, b1, W2, b2, W3, b3)[
     6]  # Predictions for train data
@@ -260,17 +257,11 @@ plt.savefig('Q2_Predictions_Train.png')
 plt.show()
 
 
-# In[11]:
-
-
 # 2.ii) Testing the model on test data
 predictions = forward_propagation_2(x_test.T, W1, b1, W2, b2, W3, b3)[
     6]  # Predictions for train data
 print("Test data", "Predictions for test data")
 print(np.column_stack((x_test, y_test, predictions.T)))
-
-
-# In[12]:
 
 
 # 2.iii) Plotting the predictions vs ground truth values on test data
@@ -282,9 +273,6 @@ plt.scatter(x_test, y_test, label="Ground Truth values")
 plt.legend(loc='upper center')
 plt.savefig('Q2_Predictions_Test.png')
 plt.show()
-
-
-# In[13]:
 
 
 # Question 3 Recognition of Handwritten Digits
@@ -317,9 +305,6 @@ test_y = test_data[:, 64].reshape(len(test_data), 1)
 test_x = np.delete(test_data, 64, axis=1)/16  # normalization
 
 
-# In[14]:
-
-
 # Example patterns
 plt.subplot(251)
 plt.imshow(test_x[1, :].reshape(8, 8), cmap='gray')
@@ -346,9 +331,6 @@ plt.savefig('Q3_Example_Patterns.png')
 plt.show()
 
 
-# In[15]:
-
-
 # Defining necessary functions
 
 def one_hot(indice):  # One-hot representation function
@@ -371,9 +353,6 @@ def derive_relu(x):
     x[x <= 0] = 0
     x[x > 0] = 1
     return x
-
-
-# In[16]:
 
 
 # Network Architecture: 64 input neurons, 32 and 24 hidden neurons in 1st and 2nd hidden layers, and 10 output neurons in output layer
@@ -427,9 +406,6 @@ def back_propagation_3(o1, o2, o3, s1, s2, s3, y_hat, y, n, W1, W2, W3, b1, b2, 
 
 def accuracy(x_ar, y_ar, W1, b1, W2, b2, W3, b3):
     return ((y_ar.astype('int').flatten() == np.argmax(forward_propagation_3(x_ar.T, W1, b1, W2, b2, W3, b3)[6], axis=0)).sum() / len(y_ar))
-
-
-# In[17]:
 
 
 # The Network Architecture with 200 epoches (maximum) and learning rate 0.001 (after some trial)
