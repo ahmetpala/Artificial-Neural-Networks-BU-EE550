@@ -107,9 +107,6 @@ for epoc in range(epoches):
             break
 
 
-# In[4]:
-
-
 # 1.ii) Plotting the Loss Function
 # Plotting Loss Function
 plt.title("Loss Function")
@@ -121,9 +118,6 @@ plt.show()
 print("Number of epoches =", len(Loss))
 
 
-# In[5]:
-
-
 # 1.iii) Testing the model with original inputs
 
 print("Original predictions", forward_propagation(
@@ -132,9 +126,6 @@ print("Original predictions", forward_propagation(
 print("Estimations (Rounded)", np.round(
     forward_propagation(data_xor.T, W1, b1, W2, b2)[4]).flatten())
 print("True Labels", labels_xor.T.flatten())
-
-
-# In[6]:
 
 
 # Question 2 (Function Approximation)
@@ -154,9 +145,6 @@ plt.ylabel("y")
 plt.scatter(x_train, y_train)
 plt.savefig('Q2_train_data.png')
 plt.show()
-
-
-# In[7]:
 
 
 # Network Architecture: 1 input neuron, 4 and 5 hidden neurons in 1st and 2nd hidden layers, and 1 output neuron in output layer
@@ -205,9 +193,6 @@ def back_propagation_2(o1, o2, o3, s1, s2, s3, y_hat, y, n, W1, W2, W3, b1, b2, 
     W3 = W3 - delta_W3
     b3 = b3 - delta_b3
     return (W1, W2, W3, b1, b2, b3, L)
-
-
-# In[8]:
 
 
 # The Network Architecture with 2000 epoches (maximum) and learning rate 0.04 (after some trial)
