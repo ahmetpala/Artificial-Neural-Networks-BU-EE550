@@ -233,9 +233,6 @@ for epoc in range(epoches):
             break
 
 
-# In[9]:
-
-
 # 2.i) Plotting the Loss Function
 # Plotting Loss Function
 plt.title("Loss Function")
