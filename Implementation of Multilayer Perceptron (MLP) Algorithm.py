@@ -512,14 +512,8 @@ plt.imshow(test_x[180, :].reshape(8, 8), cmap='gray')
 plt.savefig('Q3_Sample_Estimations.png')
 
 
-# In[21]:
-
-
 # Estimations for each class shown above (respectively)
 for e in range(10):
     print(np.argmax(forward_propagation_3(
         test_x[20*e, :].reshape(64, 1), W1, b1, W2, b2, W3, b3)[6], axis=0))
 # Each class is estimated correctly (Except 2)
-
-
-# In[ ]:
