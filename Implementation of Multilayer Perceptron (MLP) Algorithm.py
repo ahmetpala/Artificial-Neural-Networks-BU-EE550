@@ -454,9 +454,6 @@ for epoc in range(epoches):
             break
 
 
-# In[18]:
-
-
 # 3.i) Plotting the Loss Function
 # Plotting Loss Function
 plt.title("Loss Function")
@@ -466,9 +463,6 @@ plt.plot(Loss_3)
 plt.savefig('Q3_Loss.png')
 plt.show()
 print("Number of epoches =", len(Loss_3))
-
-
-# In[19]:
 
 
 # 3.ii) Testing the network with test data
@@ -483,9 +477,6 @@ plt.show()
 Test_Accuracy = 100*accuracy(test_x, test_y, W1, b1, W2, b2, W3, b3)
 print("Training Accuracy  =", "%", Accuracy[len(Accuracy)-1])
 print("Test Accuracy  =", "%", Test_Accuracy)
-
-
-# In[20]:
 
 
 # 3.iii) Plotting each sample and estimations
