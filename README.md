@@ -1,4 +1,4 @@
-# Machine Learning Mini Projects
+# Machine Learning Implementation Projects
 
 This repository contains a collection of small machine learning projects. All code is written in Python using NumPy, pandas, and Matplotlib. These are educational and experimental implementations.
 
