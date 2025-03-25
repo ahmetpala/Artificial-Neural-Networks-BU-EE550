@@ -485,9 +485,6 @@ print("Training Accuracy  =", "%", Accuracy[len(Accuracy)-1])
 print("Test Accuracy  =", "%", Test_Accuracy)
 
 
-# In[20]:
-
-
 # 3.iii) Plotting each sample and estimations
 plt.subplot(251)
 plt.imshow(test_x[0, :].reshape(8, 8), cmap='gray')
