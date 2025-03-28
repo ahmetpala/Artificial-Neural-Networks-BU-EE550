@@ -101,9 +101,6 @@ seven_noisy = np.c_[noise_func(seven_element, sigma1), noise_func(seven_element,
 nine_noisy = np.c_[noise_func(nine_element, sigma1), noise_func(nine_element, sigma2), noise_func(nine_element, sigma3)] # Noise added vector of one
 
 
-# In[6]:
-
-
 # Visualizing Noise Added Patterns
 plt.figure()
 #subplot(r,c) provide the no. of rows and columns
