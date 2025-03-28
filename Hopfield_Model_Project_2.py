@@ -83,10 +83,6 @@ for i in range(J): # Calculating Initial Weight Matrix from original inputs
             W[i][j] = 0
         
 
-
-# In[5]:
-
-
 # 4) Noise Addition
 np.random.seed(2020802018)
 sigma1 = 0.5
