@@ -59,17 +59,11 @@ axarr[1][1].imshow(convert_to_plot(nine), 'gray')
 plt.savefig('original_patterns.png')
 
 
-# In[3]:
-
-
 # 2) Converting each number to  64-element vector
 one_element = one.reshape(64,1)
 four_element = four.reshape(64,1)
 seven_element = seven.reshape(64,1)
 nine_element = nine.reshape(64,1)
-
-
-# In[4]:
 
 
 # 3) Implementing Hopfield Algorithm
