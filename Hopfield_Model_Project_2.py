@@ -40,9 +40,6 @@ nine = np.array([[1,-1,-1,-1,-1,-1,-1,1],
 [1,-1,-1,-1,-1,-1,-1,1]])
 
 
-# In[2]:
-
-
 def convert_to_plot(array):            # Defining the function converting -+1 array to 0 1 array for plotting the image properly
     array_plot = np.copy(array)
     array_plot[array_plot < 0] = 0
