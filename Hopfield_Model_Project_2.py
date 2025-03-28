@@ -133,10 +133,6 @@ for i in range(nine_noisy.shape[1]):
     axarr[3][i].imshow(nine_noisy[:,i].reshape(8,8), 'gray')
 plt.savefig('noise_added_patterns.png')
 
-
-# In[7]:
-
-
 # 5) Iterating until convergence for each pattern and standard deviation
 
 # Defining hopfield algorithm that stores 4 sample patterns
@@ -171,15 +167,10 @@ def hopfield_func(input_array):
             continue  
     return f
 
-
-  
 one1, one2, one3 = hopfield_func(one_noisy[:,0]), hopfield_func(one_noisy[:,1]), hopfield_func(one_noisy[:,2])
 four1, four2, four3 = hopfield_func(four_noisy[:,0]), hopfield_func(four_noisy[:,1]), hopfield_func(four_noisy[:,2])
 seven1, seven2, seven3 = hopfield_func(seven_noisy[:,0]), hopfield_func(seven_noisy[:,1]), hopfield_func(seven_noisy[:,2])
 nine1, nine2, nine3 = hopfield_func(nine_noisy[:,0]), hopfield_func(nine_noisy[:,1]), hopfield_func(nine_noisy[:,2])
-
-
-# In[8]:
 
 
 # Saving final iterations' plots
