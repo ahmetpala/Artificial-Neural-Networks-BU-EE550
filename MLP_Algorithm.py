@@ -38,6 +38,7 @@ labels_xor = xor(data_xor[:, 0], data_xor[:, 1]).reshape(
 # Activation function is sigmoid in the hidden layer and output layer
 # MSE Loss Function
 
+
 # Defining forward and back-propagation functions for XOR problem
 def forward_propagation(x, W1, b1, W2, b2):
     # Forward Propagation
