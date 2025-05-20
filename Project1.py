@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 # 0) INITIAL BASICS
 
 # Defining the generating function
@@ -15,9 +9,6 @@ import pandas as pd
 def gen_func(x, t0=1.15, t1=0.5, t2=0.12):
     y = t0 + t1 * x + t2 * x**2
     return y
-
-
-# In[2]:
 
 
 # 1) Generating 15 data points randomly chosen between 0 and 10 (for x)
