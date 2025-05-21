@@ -1,5 +1,4 @@
 # 1) Creating 4 sample image patterns of 1, 4, 7 and 9
-
 import numpy as np
 from matplotlib import pyplot as plt
 
