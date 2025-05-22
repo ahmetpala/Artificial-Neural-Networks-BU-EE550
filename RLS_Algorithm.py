@@ -1,6 +1,3 @@
-# In[1]:
-
-
 # 0) INITIAL BASICS
 
 # Defining the generating function
@@ -46,7 +43,6 @@ print(pd.DataFrame(dt))
 
 
 # In[4]:
-
 
 fig, ax = plt.subplots()
 ax.scatter(dt["x"], dt["y"], color="r")
