@@ -18,6 +18,7 @@ random.seed(40)
 # Part 1-) Generating Data Point Pairs
 
 n_of_samples = 100  # Defining number of overall samples
+train_size = 70
 # Producing x and y (combined version)
 # Producing samples from uniform distribution [0,1]
 x = np.random.rand(n_of_samples, 1)
@@ -48,7 +49,6 @@ plt.show()
 
 
 # Part 2-) Splitting Dataset into Train and Test
-train_size = 70
 test_size = n_of_samples - train_size
 # Producing random index numbers for train set
 train_indices = random.sample(range(0, n_of_samples - 1), train_size)
@@ -103,6 +103,10 @@ def rbf(x, mean, sd):
 
 # Part 4.i-) Defining Forward Propagation and Update Rules
 # Forward Propagation
+def compute_rbf_activations(x, means, sigma):
+    return np.exp(-((x - means.reshape(1, -1)) ** 2) / (2 * sigma**2)).T
+
+
 def forward(X, W, b, std, means):
     fi1 = rbf(X, means[0], std)
     fi2 = rbf(X, means[1], std)
