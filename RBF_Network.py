@@ -103,6 +103,10 @@ def rbf(x, mean, sd):
 
 # Part 4.i-) Defining Forward Propagation and Update Rules
 # Forward Propagation
+def compute_rbf_activations(x, means, sigma):
+    return np.exp(-((x - means.reshape(1, -1)) ** 2) / (2 * sigma**2)).T
+
+
 def forward(X, W, b, std, means):
     fi1 = rbf(X, means[0], std)
     fi2 = rbf(X, means[1], std)
