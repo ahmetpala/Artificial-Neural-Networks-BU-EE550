@@ -11,9 +11,6 @@ def gen_func(x, t0=1.15, t1=0.5, t2=0.12):
     return y
 
 
-# In[2]:
-
-
 # 1) Generating 15 data points randomly chosen between 0 and 10 (for x)
 np.random.seed(2020802018)
 
@@ -21,9 +18,6 @@ x = np.random.rand(15, 1) * 10
 x = pd.DataFrame(x, columns=["x"])
 
 print(x)
-
-
-# In[3]:
 
 
 # 2) Adding noise to each data point (Gaussian, 0 mean and 0.15 sigma) and plot
@@ -42,17 +36,12 @@ dt["y"] = dt["y"] + noise["noise"]
 print(pd.DataFrame(dt))
 
 
-# In[4]:
-
 fig, ax = plt.subplots()
 ax.scatter(dt["x"], dt["y"], color="r")
 ax.set_ylabel("y")
 ax.set_xlabel("x")
 ax.set_title("Generated Noise Added Data")
 # plt.savefig('datapoints.png')
-
-
-# In[5]:
 
 
 # 3) RLS Algorith
@@ -119,9 +108,6 @@ np.dot(
 )
 
 
-# In[6]:
-
-
 # 3.2) Model 2
 # y(i) = theta_0 + theta_1*x(i)
 
@@ -147,15 +133,9 @@ x_lse = x_lse.T
 np.dot(np.dot(np.linalg.inv(np.dot(x_lse.T, x_lse)), x_lse.T), dt["y"])
 
 
-# In[7]:
-
-
 y_2 = dt["x"].apply(
     lambda x: theta[0][0] + theta[1][0] * x
 )  # Storing estimations from Model 2
-
-
-# In[8]:
 
 
 # 3.3) Model 3
@@ -188,15 +168,9 @@ x_lse = x_lse.T
 np.dot(np.dot(np.linalg.inv(np.dot(x_lse.T, x_lse)), x_lse.T), dt["y"])
 
 
-# In[9]:
-
-
 y_3 = dt["x"].apply(
     lambda x: theta[0][0] + theta[1][0] * x + theta[2][0] * x**2
 )  # Storing estimations from Model 3
-
-
-# In[10]:
 
 
 # 3.3) Model 4
@@ -240,9 +214,6 @@ x_lse = x_lse.T
 np.dot(np.dot(np.linalg.inv(np.dot(x_lse.T, x_lse)), x_lse.T), dt["y"])
 
 
-# In[11]:
-
-
 y_4 = dt["x"].apply(
     lambda x: theta[0][0]
     + theta[1][0] * x
@@ -251,18 +222,12 @@ y_4 = dt["x"].apply(
 )  # Storing estimations from Model 4
 
 
-# In[12]:
-
-
 # 4) Calculating RLS Error for Each Model
 
 outputs = pd.DataFrame([dt["x"], dt["y"], y_1, y_2, y_3, y_4])
 
 outputs.index = ("x", "y", "Model_1", "Model_2", "Model_3", "Model_4")
 outputs
-
-
-# In[13]:
 
 
 # Calculating RLS Errors
@@ -280,9 +245,6 @@ for k in range(len(RLS_errors)):
 
 final_table["RLS Error"] = RLS_errors["RLS"]
 RLS_errors
-
-
-# In[14]:
 
 
 # 5) The graphs of estimated curve along with the data points for each model
@@ -306,9 +268,6 @@ plot_func(dt["x"], dt["y"], y_1, Model_No=1)  # Model 1
 plot_func(dt["x"], dt["y"], y_2, Model_No=2)  # Model 2
 plot_func(dt["x"], dt["y"], y_3, Model_No=3)  # Model 3
 plot_func(dt["x"], dt["y"], y_4, Model_No=4)  # Model 4
-
-
-# In[15]:
 
 
 # 6) Presenting final table with estimated parameters
