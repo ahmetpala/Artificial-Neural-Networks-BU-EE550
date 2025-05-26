@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[452]:
-
-
 # EE550 - Project 4
 # Radial Basis Function (RBF) Networks
 
@@ -45,9 +39,6 @@ plt.savefig("generated_all.png")
 plt.show()
 
 
-# In[453]:
-
-
 # Part 2-) Splitting Dataset into Train and Test
 test_size = n_of_samples - train_size
 # Producing random index numbers for train set
@@ -69,9 +60,6 @@ plt.ylabel("Train y")
 plt.scatter(x_train, y_train)
 plt.savefig("train_data.png")
 plt.show()
-
-
-# In[541]:
 
 
 # Part 3-) Designing Architecture
@@ -96,9 +84,6 @@ means = np.array([m1, m2, m3, m4, m5])  # Final means array
 # Defining RBF Functions
 def rbf(x, mean, sd):
     return np.exp(-(1 / (2 * sd**2)) * (x - mean) ** 2)
-
-
-# In[542]:
 
 
 # Part 4.i-) Defining Forward Propagation and Update Rules
@@ -135,9 +120,6 @@ def update(y, F, fi, learning_rate, W, b):
     delta_b = learning_rate * error
     b = b + delta_b
     return (W, L, b)
-
-
-# In[599]:
 
 
 # Part 4.ii-) Training the
@@ -184,9 +166,6 @@ for epoc in range(epochs):
     print("Epoc =", epoc, "--", "Loss (MSE) =", Loss_2[len(Loss_2) - 1])
 
 
-# In[600]:
-
-
 # Part 4.iii-) Train Data Predictions
 
 preds = np.empty((0, 1))  # Predictions array
@@ -202,9 +181,6 @@ plt.ylabel("y, Prediction")
 plt.legend()
 plt.savefig("preds_train.png")
 plt.show()
-
-
-# In[601]:
 
 
 # Part 5-) Testing the Model on Test Data
@@ -225,9 +201,6 @@ plt.ylabel("y, Prediction")
 plt.legend()
 plt.savefig("preds_test.png")
 plt.show()
-
-
-# In[602]:
 
 
 # Part 6-) Visualizing the Cost Function
